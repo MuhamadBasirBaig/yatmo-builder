@@ -1,0 +1,638 @@
+:root {
+  --accent-color: #428bff;
+  --cyan-blue: #06a7ea;
+}
+
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    height: 100vh;
+}
+
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.header p {
+  font-size: 14px;
+}
+
+.blue-color {
+  color: var(--cyan-blue);
+}
+.container > .row {
+  display: flex;
+  align-items: stretch;
+}
+
+.container .main-text {
+  font-size: 25px;
+  font-weight: 900;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.container > .row > [class*="col-"] {
+  display: flex;
+  flex-direction: column;
+}
+
+.container > .row > [class*="col-"] > .config-section,
+.container > .row > [class*="col-"] > .preview-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.config-section {
+  background: transparent;
+  border-radius: 8px;
+  padding: 0;
+  box-shadow: none;
+}
+
+.config-section .head,
+.config-section > h2,
+.config-section > h3 {
+  padding: 1.25rem 1.5rem 0.5rem 1.5rem;
+  border-bottom: 1px solid #e9ecef;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Custom tabs styling */
+.custom-tabs-wrapper {
+  background: transparent;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.custom-tabs {
+  display: flex;
+  border-bottom: 1px solid #e9ecef;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.custom-tab-btn {
+  flex: 1;
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  padding: 1.25rem 1.5rem 0.5rem 1.5rem;
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 700;
+  background: transparent;
+  box-shadow: none;
+  cursor: pointer;
+  text-align: center;
+  transition: border-bottom-color 0.2s ease;
+}
+
+.custom-tab-btn svg path {
+  fill: #6b7280; /* gray */
+  transition: fill 0.2s ease;
+}
+
+/* Active tab: change SVG path color to cyan */
+.custom-tab-btn.active svg path {
+  fill: var(--cyan-blue);
+}
+
+.custom-tab-btn:hover {
+  color: #333;
+  background: transparent;
+  border-bottom-color: transparent;
+}
+
+.custom-tab-btn .svg-icon {
+  width: 23px;
+  height: 23px;
+  vertical-align: middle;
+}
+
+
+
+.custom-tab-btn.active {
+  color: var(--cyan-blue); /* active cyan */
+  background: transparent;
+  border-bottom: 4px solid var(--cyan-blue);
+}
+
+.custom-tab-btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.custom-tab-content {
+  background: transparent;
+  padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-tab-pane {
+  display: none;
+  background: transparent;
+  padding: 0;
+}
+
+.custom-tab-pane.active {
+  display: block;
+  background: transparent;
+}
+
+#code-tab-content {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#code-tab-content.active {
+  display: flex;
+}
+
+.config-section .body,
+.config-section > form,
+.config-section > div:not(.head):not(.codeBox) {
+  /* padding: 1.5rem; */
+  padding-top: 15px;
+}
+
+.config-section .body > form > div {
+  margin-bottom: 1.25rem;
+}
+
+.config-section .body > form > div:last-child {
+  margin-bottom: 0;
+}
+
+/* Accordion styling within config section */
+.config-section .accordion {
+  --bs-accordion-border-color: transparent;
+  --bs-accordion-border-radius: 8px;
+  --bs-accordion-inner-border-radius: 8px;
+  --bs-accordion-btn-padding-x: 1rem;
+  --bs-accordion-btn-padding-y: 0.75rem;
+  --bs-accordion-body-padding-x: 1rem;
+  --bs-accordion-body-padding-y: 1rem;
+  --bs-accordion-button-active-bg: transparent;
+  --bs-accordion-button-active-color: #333;
+  --bs-accordion-button-focus-box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.config-section .accordion-item {
+  border: none;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.config-section .accordion-item:last-child {
+  border-bottom: none;
+}
+
+.config-section .accordion-header {
+  border-bottom: 1px solid #e9ecef;
+}
+
+.config-section .accordion-button {
+  font-size: 16px;
+  font-weight: 700;
+  color: black;
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+}
+
+.config-section .accordion-button:not(.collapsed) {
+  color: #333;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.config-section .accordion-button:focus {
+  border-color: transparent;
+  box-shadow: none;
+  outline: none;
+}
+
+.config-section .accordion-button:active,
+.config-section .accordion-button:focus-visible {
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  outline: none;
+}
+
+.config-section .accordion-button:hover {
+  background-color: transparent;
+  color: #333;
+}
+
+.config-section .accordion-button::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23333'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.config-section .accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23333'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.config-section .accordion-body {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  height: 225px;
+}
+
+.form-label,
+label {
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 14px;
+  display: block;
+}
+
+.form-control,
+.form-select,
+select,
+input[type="text"],
+input[type="number"],
+input[type="url"] {
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  padding: 0.5rem 0.75rem;
+  font-size: 14px;
+  width: 100%;
+}
+
+.form-control:focus,
+.form-select:focus,
+select:focus,
+input:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 0.2rem rgba(66, 139, 255, 0.25);
+  outline: none;
+}
+
+small.text-muted,
+.hint {
+  font-size: 12px;
+  color: #6c757d;
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.btn-primary {
+  background-color: var(--accent-color);
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.btn-primary:hover {
+  background-color: #357abd;
+}
+
+.btn-copy,
+.btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-copy:hover,
+.btn:hover {
+  background-color: #218838;
+}
+
+.preview-section {
+  background: white;
+  border-radius: 8px;
+  padding: 0;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.preview-section .head h2 {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.preview-section .head,
+.preview-section > h3 {
+  padding: 1.25rem 1.5rem 0.5rem 1.5rem;
+  border-bottom: 1px solid #e9ecef;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.head h2 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Switch container */
+.view-switch {
+  display: flex;
+  gap: 6px;
+  background: white;
+  padding: 4px;
+  border-radius: 8px;
+  box-shadow: inset 15px 3px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Switch buttons */
+.switch-btn {
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+/* Active button background */
+.switch-btn.active {
+  background: var(--cyan-blue); /* blue */
+}
+
+/* Default SVG fill/stroke */
+.switch-btn svg path {
+  fill: #6b7280; /* gray */
+  stroke: none; /* remove stroke if any */
+  transition: fill 0.2s, stroke 0.2s;
+}
+
+/* Active SVG fill/stroke */
+.switch-btn.active svg path {
+  fill: #ffffff; /* white */
+  stroke: #ffffff; /* optional: for desktop SVG */
+}
+
+.preview-section .body {
+  padding: 1rem;
+  height: 100%;
+}
+
+.preview-container {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #f8f9fa url("/assests/map-display.jpg") no-repeat center;
+  background-size: cover; /* fills full container, may crop sides */
+  height: 100%;
+  background-position: inherit;
+  min-height: 500px;
+}
+
+.preview-frame {
+  width: 100%;
+  border: none;
+  display: block;
+}
+
+.tips-section {
+  background: white;
+  border-radius: 8px;
+  padding: 0;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  margin-top: 20px;
+  height: 255px; /* total container height */
+}
+
+.tips-section > h5,
+.tips-section > h2 {
+  padding: 1.25rem 1.5rem 0.5rem 1.5rem;
+  border-bottom: 1px solid #e9ecef;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.tips-section > p,
+.tips-section > ul {
+  padding: 1.5rem;
+  margin: 0;
+}
+
+.tips-section .note {
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.tips-section h5 {
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+  font-size: 18px;
+}
+
+.tips-section ul {
+  margin: 8px 0 0 18px;
+  padding: 0;
+  color: inherit;
+}
+
+.tips-section li {
+  margin-bottom: 0.5rem;
+  font-size: 14px;
+}
+
+.code-output {
+  background: #1e1e1e;
+  color: #d4d4d4;
+  padding: 1rem;
+  border-radius: 4px;
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+  overflow-x: auto;
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid #333;
+  width: 100%;
+  resize: vertical;
+  min-height: 150px;
+  box-sizing: border-box;
+}
+
+textarea#code {
+  line-height: 1.5;
+}
+
+.codeBox {
+  background: white;
+  border-radius: 8px;
+  padding: 0;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  height: 300px; /* total container height */
+  display: flex;
+  flex-direction: column;
+}
+
+.codeBox .head,
+.tips-section .head {
+  padding: 1.25rem 1.5rem 0.5rem 1.5rem;
+  border-bottom: 1px solid #e9ecef;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0; /* keep header height fixed */
+}
+
+.codeBox .head h2,
+.tips-section .head h2 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.codeBox .body,
+.tips-section .body {
+  padding: 1rem;
+  flex: 1; /* take remaining space */
+  display: flex;
+}
+
+.codeBox .body textarea {
+  width: 100%;
+  height: 100%;
+  resize: none; /* optional: disable manual resizing */
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  padding: 0.75rem;
+  font-family: monospace;
+  font-size: 14px;
+  box-sizing: border-box; /* ensure padding included in width/height */
+}
+
+.color-picker-wrapper,
+.colorRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.color-picker,
+input[type="color"] {
+  width: 50px;
+  height: 36px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.radio-option input[type="radio"] {
+  cursor: pointer;
+  width: auto;
+}
+
+.radio-option label {
+  cursor: pointer;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.row > div {
+  flex: 1;
+}
+
+.row:last-child {
+  margin-bottom: 0;
+}
+
+.rangeWrap {
+  margin-top: 0.5rem;
+}
+
+.rangeWrap input[type="range"] {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.rangeMeta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #6c757d;
+  margin-top: 0.25rem;
+}
