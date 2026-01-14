@@ -1,638 +1,917 @@
-:root {
-  --accent-color: #428bff;
-  --cyan-blue: #06a7ea;
+/* ============================
+   Yatmo Plugin Generator (scoped)
+   Container: #yatmo-plugin-generator
+   All styles prefixed to avoid conflicts
+   ============================ */
+
+#yatmo-plugin-generator {
+    --pg-accent-color: #428bff;
+    --pg-cyan-blue: #06a7ea;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-body {
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    height: 100vh;
+/* Scope box-sizing only to the generator subtree */
+#yatmo-plugin-generator,
+#yatmo-plugin-generator * {
+    box-sizing: border-box;
 }
 
-.header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: 2rem 0;
-  margin-bottom: 2rem;
+#yatmo-plugin-generator .blue-color {
+    color: var(--pg-cyan-blue);
 }
 
-.header h1 {
-  font-size: 24px;
-  font-weight: 600;
+#yatmo-plugin-generator .container > .row {
+    display: flex;
+    align-items: stretch;
 }
 
-.header p {
-  font-size: 14px;
+#yatmo-plugin-generator .container .main-text {
+    font-size: 25px;
+    font-weight: 900;
+    text-align: left;
+    padding-left: 20px;
 }
 
-.blue-color {
-  color: var(--cyan-blue);
-}
-.container > .row {
-  display: flex;
-  align-items: stretch;
+#yatmo-plugin-generator .container > .row > [class*="col-"] {
+    display: flex;
+    flex-direction: column;
 }
 
-.container .main-text {
-  font-size: 25px;
-  font-weight: 900;
-  text-align: left;
-  padding-left: 20px;
+#yatmo-plugin-generator .container > .row > [class*="col-"] > .config-section,
+#yatmo-plugin-generator .container > .row > [class*="col-"] > .preview-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
-.container > .row > [class*="col-"] {
-  display: flex;
-  flex-direction: column;
+#yatmo-plugin-generator .config-section {
+    background: transparent;
+    border-radius: 8px;
+    padding: 0;
+    box-shadow: none;
 }
 
-.container > .row > [class*="col-"] > .config-section,
-.container > .row > [class*="col-"] > .preview-section {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.config-section {
-  background: transparent;
-  border-radius: 8px;
-  padding: 0;
-  box-shadow: none;
-}
-
-.config-section .head,
-.config-section > h2,
-.config-section > h3 {
-  padding: 1.25rem 1.5rem 0.5rem 1.5rem;
-  border-bottom: 1px solid #e9ecef;
-  margin: 0;
-  font-size: 18px;
-  font-weight: 600;
+#yatmo-plugin-generator .config-section .head,
+#yatmo-plugin-generator .config-section > h2,
+#yatmo-plugin-generator .config-section > h3 {
+    padding: 1.25rem 1.5rem 0.5rem 1.5rem;
+    border-bottom: 1px solid #e9ecef;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 /* Custom tabs styling */
-.custom-tabs-wrapper {
-  background: transparent;
-  box-shadow: none;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
+#yatmo-plugin-generator .custom-tabs-wrapper {
+    background: transparent;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
-.custom-tabs {
-  display: flex;
-  border-bottom: 1px solid #e9ecef;
-  margin: 0;
-  padding: 0;
-  background: transparent;
-  box-shadow: none;
+#yatmo-plugin-generator .custom-tabs {
+    display: flex;
+    border-bottom: 1px solid #e9ecef;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
 }
 
-.custom-tab-btn {
-  flex: 1;
-  border: none;
-  border-bottom: 2px solid transparent;
-  border-radius: 0;
-  padding: 1.25rem 1.5rem 0.5rem 1.5rem;
-  color: #6b7280;
-  font-size: 14px;
-  font-weight: 700;
-  background: transparent;
-  box-shadow: none;
-  cursor: pointer;
-  text-align: center;
-  transition: border-bottom-color 0.2s ease;
+#yatmo-plugin-generator .custom-tab-btn {
+    flex: 1;
+    border: none;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+    padding: 1.25rem 1.5rem 0.5rem 1.5rem;
+    color: #6b7280;
+    font-size: 14px;
+    font-weight: 700;
+    background: transparent;
+    box-shadow: none;
+    cursor: pointer;
+    text-align: center;
+    transition: border-bottom-color 0.2s ease;
 }
 
-.custom-tab-btn svg path {
-  fill: #6b7280; /* gray */
-  transition: fill 0.2s ease;
+#yatmo-plugin-generator .custom-tab-btn svg path {
+    fill: #6b7280;
+    transition: fill 0.2s ease;
 }
 
-/* Active tab: change SVG path color to cyan */
-.custom-tab-btn.active svg path {
-  fill: var(--cyan-blue);
+#yatmo-plugin-generator .custom-tab-btn.active svg path {
+    fill: var(--pg-cyan-blue);
 }
 
-.custom-tab-btn:hover {
-  color: #333;
-  background: transparent;
-  border-bottom-color: transparent;
+#yatmo-plugin-generator .custom-tab-btn:hover {
+    color: #333;
+    background: transparent;
+    border-bottom-color: transparent;
 }
 
-.custom-tab-btn .svg-icon {
-  width: 23px;
-  height: 23px;
-  vertical-align: middle;
+#yatmo-plugin-generator .custom-tab-btn .svg-icon {
+    width: 23px;
+    height: 23px;
+    vertical-align: middle;
 }
 
-
-
-.custom-tab-btn.active {
-  color: var(--cyan-blue); /* active cyan */
-  background: transparent;
-  border-bottom: 4px solid var(--cyan-blue);
+#yatmo-plugin-generator .custom-tab-btn.active {
+    color: var(--pg-cyan-blue);
+    background: transparent;
+    border-bottom: 4px solid var(--pg-cyan-blue);
 }
 
-.custom-tab-btn:focus {
-  outline: none;
-  box-shadow: none;
+#yatmo-plugin-generator .custom-tab-btn:focus {
+    outline: none;
+    box-shadow: none;
 }
 
-.custom-tab-content {
-  background: transparent;
-  padding: 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+#yatmo-plugin-generator .custom-tab-content {
+    background: transparent;
+    padding: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
-.custom-tab-pane {
-  display: none;
-  background: transparent;
-  padding: 0;
+#yatmo-plugin-generator .custom-tab-pane {
+    display: none;
+    background: transparent;
+    padding: 0;
 }
 
-.custom-tab-pane.active {
-  display: block;
-  background: transparent;
+#yatmo-plugin-generator .custom-tab-pane.active {
+    display: block;
+    background: transparent;
 }
 
-#code-tab-content {
-  display: none;
-  flex-direction: column;
-  gap: 1rem;
+#yatmo-plugin-generator #code-tab-content {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-#code-tab-content.active {
-  display: flex;
+#yatmo-plugin-generator #code-tab-content.active {
+    display: flex;
 }
 
-.config-section .body,
-.config-section > form,
-.config-section > div:not(.head):not(.codeBox) {
-  /* padding: 1.5rem; */
-  padding-top: 15px;
+#yatmo-plugin-generator .config-section .body,
+#yatmo-plugin-generator .config-section > form,
+#yatmo-plugin-generator .config-section > div:not(.head):not(.codeBox) {
+    padding-top: 15px;
 }
 
-.config-section .body > form > div {
-  margin-bottom: 1.25rem;
+#yatmo-plugin-generator .config-section .body > form > div {
+    margin-bottom: 1.25rem;
 }
 
-.config-section .body > form > div:last-child {
-  margin-bottom: 0;
+#yatmo-plugin-generator .config-section .body > form > div:last-child {
+    margin-bottom: 0;
 }
 
 /* Accordion styling within config section */
-.config-section .accordion {
-  --bs-accordion-border-color: transparent;
-  --bs-accordion-border-radius: 8px;
-  --bs-accordion-inner-border-radius: 8px;
-  --bs-accordion-btn-padding-x: 1rem;
-  --bs-accordion-btn-padding-y: 0.75rem;
-  --bs-accordion-body-padding-x: 1rem;
-  --bs-accordion-body-padding-y: 1rem;
-  --bs-accordion-button-active-bg: transparent;
-  --bs-accordion-button-active-color: #333;
-  --bs-accordion-button-focus-box-shadow: none;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+#yatmo-plugin-generator .config-section .accordion {
+    --bs-accordion-border-color: transparent;
+    --bs-accordion-border-radius: 8px;
+    --bs-accordion-inner-border-radius: 8px;
+    --bs-accordion-btn-padding-x: 1rem;
+    --bs-accordion-btn-padding-y: 0.75rem;
+    --bs-accordion-body-padding-x: 1rem;
+    --bs-accordion-body-padding-y: 1rem;
+    --bs-accordion-button-active-bg: transparent;
+    --bs-accordion-button-active-color: #333;
+    --bs-accordion-button-focus-box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-.config-section .accordion-item {
-  border: none;
-  border-radius: 8px;
-  background: white;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-  overflow: hidden;
+#yatmo-plugin-generator .config-section .accordion-item {
+    border: none;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
 }
 
-.config-section .accordion-item:last-child {
-  border-bottom: none;
+#yatmo-plugin-generator .config-section .accordion-item:last-child {
+    border-bottom: none;
 }
 
-.config-section .accordion-header {
-  border-bottom: 1px solid #e9ecef;
+#yatmo-plugin-generator .config-section .accordion-header {
+    border-bottom: 1px solid #e9ecef;
 }
 
-.config-section .accordion-button {
-  font-size: 16px;
-  font-weight: 700;
-  color: black;
-  background-color: transparent;
-  box-shadow: none;
-  border: none;
+#yatmo-plugin-generator .config-section .accordion-button {
+    font-size: 16px;
+    font-weight: 700;
+    color: black;
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
 }
 
-.config-section .accordion-button:not(.collapsed) {
-  color: #333;
-  background-color: transparent;
-  box-shadow: none;
+#yatmo-plugin-generator .config-section .accordion-button:not(.collapsed) {
+    color: #333;
+    background-color: transparent;
+    box-shadow: none;
 }
 
-.config-section .accordion-button:focus {
-  border-color: transparent;
-  box-shadow: none;
-  outline: none;
+#yatmo-plugin-generator .config-section .accordion-button:focus {
+    border-color: transparent;
+    box-shadow: none;
+    outline: none;
 }
 
-.config-section .accordion-button:active,
-.config-section .accordion-button:focus-visible {
-  background-color: transparent;
-  border-color: transparent;
-  box-shadow: none;
-  outline: none;
+#yatmo-plugin-generator .config-section .accordion-button:active,
+#yatmo-plugin-generator .config-section .accordion-button:focus-visible {
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    outline: none;
 }
 
-.config-section .accordion-button:hover {
-  background-color: transparent;
-  color: #333;
+#yatmo-plugin-generator .config-section .accordion-button:hover {
+    background-color: transparent;
+    color: #333;
 }
 
-.config-section .accordion-button::after {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23333'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+#yatmo-plugin-generator .config-section .accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23333'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
 }
 
-.config-section .accordion-button:not(.collapsed)::after {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23333'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+#yatmo-plugin-generator .config-section .accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23333'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
 }
 
-.config-section .accordion-body {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  height: 225px;
+#yatmo-plugin-generator .config-section .accordion-body {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    height: 225px;
 }
 
-.form-label,
-label {
-  font-weight: 500;
-  color: #333;
-  margin-bottom: 0.5rem;
-  font-size: 14px;
-  display: block;
+#yatmo-plugin-generator .form-label,
+#yatmo-plugin-generator label {
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 14px;
+    display: block;
 }
 
-.form-control,
-.form-select,
-select,
-input[type="text"],
-input[type="number"],
-input[type="url"] {
-  border-radius: 4px;
-  border: 1px solid #ddd;
-  padding: 0.5rem 0.75rem;
-  font-size: 14px;
-  width: 100%;
+#yatmo-plugin-generator .form-control,
+#yatmo-plugin-generator .form-select,
+#yatmo-plugin-generator select,
+#yatmo-plugin-generator input[type="text"],
+#yatmo-plugin-generator input[type="number"],
+#yatmo-plugin-generator input[type="url"] {
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    padding: 0.5rem 0.75rem;
+    font-size: 14px;
+    width: 100%;
 }
 
-.form-control:focus,
-.form-select:focus,
-select:focus,
-input:focus {
-  border-color: var(--accent-color);
-  box-shadow: 0 0 0 0.2rem rgba(66, 139, 255, 0.25);
-  outline: none;
+#yatmo-plugin-generator .form-control:focus,
+#yatmo-plugin-generator .form-select:focus,
+#yatmo-plugin-generator select:focus,
+#yatmo-plugin-generator input:focus {
+    border-color: var(--pg-accent-color);
+    box-shadow: 0 0 0 0.2rem rgba(66, 139, 255, 0.25);
+    outline: none;
 }
 
-small.text-muted,
-.hint {
-  font-size: 12px;
-  color: #6c757d;
-  display: block;
-  margin-top: 0.25rem;
+#yatmo-plugin-generator small.text-muted,
+#yatmo-plugin-generator .hint {
+    font-size: 12px;
+    color: #6c757d;
+    display: block;
+    margin-top: 0.25rem;
 }
 
-.btn-primary {
-  background-color: var(--accent-color);
-  border: none;
-  border-radius: 4px;
-  padding: 0.5rem 1rem;
-  font-weight: 500;
-  font-size: 14px;
+#yatmo-plugin-generator .btn-primary {
+    background-color: var(--pg-accent-color);
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    font-size: 14px;
 }
 
-.btn-primary:hover {
-  background-color: #357abd;
+#yatmo-plugin-generator .btn-primary:hover {
+    background-color: #357abd;
 }
 
-.btn-copy,
-.btn {
-  background-color: #28a745;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 0.5rem 1rem;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
+#yatmo-plugin-generator .btn-copy,
+#yatmo-plugin-generator .btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
 }
 
-.btn-copy:hover,
-.btn:hover {
-  background-color: #218838;
+#yatmo-plugin-generator .btn-copy:hover,
+#yatmo-plugin-generator .btn:hover {
+    background-color: #218838;
 }
 
-.preview-section {
-  background: white;
-  border-radius: 8px;
-  padding: 0;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+#yatmo-plugin-generator .preview-section {
+    background: white;
+    border-radius: 8px;
+    padding: 0;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
-.preview-section .head h2 {
-  font-size: 14px;
-  font-weight: 700;
+#yatmo-plugin-generator .preview-section .head h2 {
+    font-size: 14px;
+    font-weight: 700;
 }
 
-.preview-section .head,
-.preview-section > h3 {
-  padding: 1.25rem 1.5rem 0.5rem 1.5rem;
-  border-bottom: 1px solid #e9ecef;
-  margin: 0;
-  font-size: 14px;
-  font-weight: 700;
+#yatmo-plugin-generator .preview-section .head,
+#yatmo-plugin-generator .preview-section > h3 {
+    padding: 1.25rem 1.5rem 0.5rem 1.5rem;
+    border-bottom: 1px solid #e9ecef;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
 }
 
-.head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 16px;
-  border-bottom: 1px solid #e5e7eb;
+#yatmo-plugin-generator .head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-bottom: 1px solid #e5e7eb;
 }
 
-.head h2 {
-  margin: 0;
-  font-size: 14px;
-  font-weight: 600;
+#yatmo-plugin-generator .head h2 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
 }
 
 /* Switch container */
-.view-switch {
-  display: flex;
-  gap: 6px;
-  background: white;
-  padding: 4px;
-  border-radius: 8px;
-  box-shadow: inset 15px 3px 15px rgba(0, 0, 0, 0.1);
+#yatmo-plugin-generator .view-switch {
+    display: flex;
+    gap: 6px;
+    background: white;
+    padding: 4px;
+    border-radius: 8px;
+    box-shadow: inset 15px 3px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Switch buttons */
-.switch-btn {
-  background: transparent;
-  border: none;
-  border-radius: 6px;
-  padding: 6px 10px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s;
+#yatmo-plugin-generator .switch-btn {
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
 }
 
 /* Active button background */
-.switch-btn.active {
-  background: var(--cyan-blue); /* blue */
+#yatmo-plugin-generator .switch-btn.active {
+    background: var(--pg-cyan-blue);
 }
 
 /* Default SVG fill/stroke */
-.switch-btn svg path {
-  fill: #6b7280; /* gray */
-  stroke: none; /* remove stroke if any */
-  transition: fill 0.2s, stroke 0.2s;
+#yatmo-plugin-generator .switch-btn svg path {
+    fill: #6b7280;
+    stroke: none;
+    transition: fill 0.2s, stroke 0.2s;
 }
 
 /* Active SVG fill/stroke */
-.switch-btn.active svg path {
-  fill: #ffffff; /* white */
-  stroke: #ffffff; /* optional: for desktop SVG */
+#yatmo-plugin-generator .switch-btn.active svg path {
+    fill: #ffffff;
+    stroke: #ffffff;
 }
 
-.preview-section .body {
-  padding: 1rem;
-  height: 100%;
+#yatmo-plugin-generator .preview-section .body {
+    padding: 1rem;
+    height: 100%;
 }
 
-.preview-container {
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  overflow: hidden;
-  background: #f8f9fa url("/assests/map-display.jpg") no-repeat center;
-  background-size: cover; /* fills full container, may crop sides */
-  height: 100%;
-  background-position: inherit;
-  min-height: 500px;
+#yatmo-plugin-generator .preview-container {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #f8f9fa;
+    background-size: cover;
+    height: 100%;
+    background-position: inherit;
+    min-height: 500px;
 }
 
-.preview-frame {
-  width: 100%;
-  border: none;
-  display: block;
+#yatmo-plugin-generator .preview-frame {
+    width: 100%;
+    border: none;
+    display: block;
 }
 
-.tips-section {
-  background: white;
-  border-radius: 8px;
-  padding: 0;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-  margin-top: 20px;
-  height: 255px; /* total container height */
+#yatmo-plugin-generator .tips-section {
+    background: white;
+    border-radius: 8px;
+    padding: 0;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    margin-top: 20px;
+    height: 255px;
 }
 
-.tips-section > h5,
-.tips-section > h2 {
-  padding: 1.25rem 1.5rem 0.5rem 1.5rem;
-  border-bottom: 1px solid #e9ecef;
-  margin: 0;
-  font-size: 18px;
-  font-weight: 600;
+#yatmo-plugin-generator .tips-section > h5,
+#yatmo-plugin-generator .tips-section > h2 {
+    padding: 1.25rem 1.5rem 0.5rem 1.5rem;
+    border-bottom: 1px solid #e9ecef;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
 }
 
-.tips-section > p,
-.tips-section > ul {
-  padding: 1.5rem;
-  margin: 0;
+#yatmo-plugin-generator .tips-section > p,
+#yatmo-plugin-generator .tips-section > ul {
+    padding: 1.5rem;
+    margin: 0;
 }
 
-.tips-section .note {
-  border-radius: 4px;
-  font-size: 14px;
+#yatmo-plugin-generator .tips-section .note {
+    border-radius: 4px;
+    font-size: 14px;
 }
 
-.tips-section h5 {
-  color: var(--accent-color);
-  margin-bottom: 1rem;
-  font-size: 18px;
+#yatmo-plugin-generator .tips-section h5 {
+    color: var(--pg-accent-color);
+    margin-bottom: 1rem;
+    font-size: 18px;
 }
 
-.tips-section ul {
-  margin: 8px 0 0 18px;
-  padding: 0;
-  color: inherit;
+#yatmo-plugin-generator .tips-section ul {
+    margin: 8px 0 0 18px;
+    padding: 0;
+    color: inherit;
 }
 
-.tips-section li {
-  margin-bottom: 0.5rem;
-  font-size: 14px;
+#yatmo-plugin-generator .tips-section li {
+    margin-bottom: 0.5rem;
+    font-size: 14px;
 }
 
-.code-output {
-  background: #1e1e1e;
-  color: #d4d4d4;
-  padding: 1rem;
-  border-radius: 4px;
-  font-family: "Courier New", monospace;
-  font-size: 13px;
-  overflow-x: auto;
-  max-height: 400px;
-  overflow-y: auto;
-  border: 1px solid #333;
-  width: 100%;
-  resize: vertical;
-  min-height: 150px;
-  box-sizing: border-box;
+#yatmo-plugin-generator .code-output {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 1rem;
+    border-radius: 4px;
+    font-family: "Courier New", monospace;
+    font-size: 13px;
+    overflow-x: auto;
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #333;
+    width: 100%;
+    resize: vertical;
+    min-height: 150px;
+    box-sizing: border-box;
 }
 
-textarea#code {
-  line-height: 1.5;
+#yatmo-plugin-generator textarea#code {
+    line-height: 1.5;
 }
 
-.codeBox {
-  background: white;
-  border-radius: 8px;
-  padding: 0;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-  height: 300px; /* total container height */
-  display: flex;
-  flex-direction: column;
+#yatmo-plugin-generator .codeBox {
+    background: white;
+    border-radius: 8px;
+    padding: 0;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    height: 300px;
+    display: flex;
+    flex-direction: column;
 }
 
-.codeBox .head,
-.tips-section .head {
-  padding: 1.25rem 1.5rem 0.5rem 1.5rem;
-  border-bottom: 1px solid #e9ecef;
-  margin: 0;
-  font-size: 18px;
-  font-weight: 600;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-shrink: 0; /* keep header height fixed */
+#yatmo-plugin-generator .codeBox .head,
+#yatmo-plugin-generator .tips-section .head {
+    padding: 1.25rem 1.5rem 0.5rem 1.5rem;
+    border-bottom: 1px solid #e9ecef;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
 }
 
-.codeBox .head h2,
-.tips-section .head h2 {
-  font-size: 18px;
-  font-weight: 700;
+#yatmo-plugin-generator .codeBox .head h2,
+#yatmo-plugin-generator .tips-section .head h2 {
+    font-size: 16px;
+    font-weight: 700;
 }
 
-.codeBox .body,
-.tips-section .body {
-  padding: 1rem;
-  flex: 1; /* take remaining space */
-  display: flex;
+#yatmo-plugin-generator .codeBox .body,
+#yatmo-plugin-generator .tips-section .body {
+    padding: 1rem;
+    flex: 1;
+    display: flex;
 }
 
-.codeBox .body textarea {
-  width: 100%;
-  height: 100%;
-  resize: none; /* optional: disable manual resizing */
-  border: 1px solid #e9ecef;
-  border-radius: 6px;
-  padding: 0.75rem;
-  font-family: monospace;
-  font-size: 14px;
-  box-sizing: border-box; /* ensure padding included in width/height */
+#yatmo-plugin-generator .codeBox .body textarea {
+    width: 100%;
+    height: 100%;
+    resize: none;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    padding: 0.75rem;
+    font-family: monospace;
+    font-size: 14px;
+    box-sizing: border-box;
 }
 
-.color-picker-wrapper,
-.colorRow {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
+#yatmo-plugin-generator .color-picker-wrapper,
+#yatmo-plugin-generator .colorRow {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
 }
 
-.color-picker,
-input[type="color"] {
-  width: 50px;
-  height: 36px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  cursor: pointer;
-  padding: 0;
+#yatmo-plugin-generator .color-picker,
+#yatmo-plugin-generator input[type="color"] {
+    width: 50px;
+    height: 36px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 0;
 }
 
-.radio-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+#yatmo-plugin-generator .radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
-.radio-option {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+#yatmo-plugin-generator .radio-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-.radio-option input[type="radio"] {
-  cursor: pointer;
-  width: auto;
+#yatmo-plugin-generator .radio-option input[type="radio"] {
+    cursor: pointer;
+    width: auto;
 }
 
-.radio-option label {
-  cursor: pointer;
-  margin: 0;
-  font-size: 14px;
-  font-weight: 400;
+#yatmo-plugin-generator .radio-option label {
+    cursor: pointer;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
 }
 
-h2 {
-  font-size: 18px;
-  font-weight: 600;
+#yatmo-plugin-generator h2 {
+    font-size: 18px;
+    font-weight: 600;
 }
 
-h3 {
-  font-size: 16px;
-  font-weight: 600;
+#yatmo-plugin-generator h3 {
+    font-size: 16px;
+    font-weight: 600;
 }
 
-h5 {
-  font-size: 14px;
-  font-weight: 600;
+#yatmo-plugin-generator h5 {
+    font-size: 14px;
+    font-weight: 600;
 }
 
-.row {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1.25rem;
+#yatmo-plugin-generator .row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
 }
 
-.row > div {
-  flex: 1;
+#yatmo-plugin-generator .row > div {
+    flex: 1;
 }
 
-.row:last-child {
-  margin-bottom: 0;
+#yatmo-plugin-generator .row:last-child {
+    margin-bottom: 0;
 }
 
-.rangeWrap {
-  margin-top: 0.5rem;
+#yatmo-plugin-generator .rangeWrap {
+    margin-top: 0.5rem;
 }
 
-.rangeWrap input[type="range"] {
-  width: 100%;
-  margin-bottom: 0.5rem;
+#yatmo-plugin-generator .rangeWrap input[type="range"] {
+    width: 100%;
+    margin-bottom: 0.5rem;
 }
 
-.rangeMeta {
-  display: flex;
-  justify-content: space-between;
-  font-size: 12px;
-  color: #6c757d;
-  margin-top: 0.25rem;
+#yatmo-plugin-generator .rangeMeta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #6c757d;
+    margin-top: 0.25rem;
+}
+
+/* Additional styles from client CSS */
+#yatmo-plugin-generator .grid {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    gap: 16px;
+    align-items: start;
+}
+
+#yatmo-plugin-generator .leftCol {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#yatmo-plugin-generator .card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    overflow: hidden;
+}
+
+#yatmo-plugin-generator .card .head {
+    padding: 12px 14px;
+    border-bottom: 1px solid #e5e7eb;
+    background: linear-gradient(180deg,#fff,#fbfbfb);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+#yatmo-plugin-generator .card .head h2 {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+    color: #0f172a;
+}
+
+#yatmo-plugin-generator .card .body {
+    padding: 14px;
+}
+
+#yatmo-plugin-generator .form {
+    display: grid;
+    gap: 12px;
+}
+
+#yatmo-plugin-generator .pg-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+#yatmo-plugin-generator .rightCol {
+    display: grid;
+    gap: 14px;
+}
+
+#yatmo-plugin-generator .previews {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 14px;
+    align-items: start;
+}
+
+#yatmo-plugin-generator .device {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    overflow: hidden;
+}
+
+#yatmo-plugin-generator .device .bar {
+    padding: 10px 12px;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(180deg,#fff,#fbfbfb);
+}
+
+#yatmo-plugin-generator .device .bar strong {
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .02em;
+}
+
+#yatmo-plugin-generator .device .bar span {
+    font-size: 12px;
+    color: #6b7280;
+    font-weight: 800;
+}
+
+#yatmo-plugin-generator .frameWrap {
+    padding: 12px;
+    background: #fff;
+}
+
+#yatmo-plugin-generator .mobileShell {
+    width: 320px;
+    height: 568px;
+    border-radius: 26px;
+    border: 1px solid rgba(0,0,0,.10);
+    box-shadow: 0 12px 30px rgba(0,0,0,.08);
+    overflow: hidden;
+    margin: 0 auto;
+    background: #fff;
+}
+
+#yatmo-plugin-generator .mediumShell {
+    width: 100%;
+    height: 520px;
+    border-radius: 18px;
+    border: 1px solid rgba(0,0,0,.10);
+    box-shadow: 0 12px 30px rgba(0,0,0,.08);
+    overflow: hidden;
+    background: #fff;
+}
+
+#yatmo-plugin-generator iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+    background: #fff;
+}
+
+
+
+#yatmo-plugin-generator .codeBox .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+#yatmo-plugin-generator .codeBox .top strong {
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+}
+
+#yatmo-plugin-generator .pg-btn {
+    appearance: none;
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    color: #111827;
+    padding: 8px 10px;
+    border-radius: 12px;
+    font-weight: 900;
+    font-size: 12px;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    white-space: nowrap;
+}
+
+#yatmo-plugin-generator .pg-btn:active {
+    transform: translateY(1px);
+}
+
+#yatmo-plugin-generator textarea {
+    width: 100%;
+    min-height: 160px;
+    resize: vertical;
+    padding: 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,.10);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    font-size: 12px;
+    line-height: 1.35;
+    background: rgba(255,255,255,.75);
+    outline: none;
+}
+
+#yatmo-plugin-generator .note {
+    padding: 10px 12px;
+    color:black;
+    border-radius: 12px;
+    background: rgba(255,255,255,.7);
+    font-size: 12px;
+    line-height: 1.35;
+}
+
+#yatmo-plugin-generator .note > ul > li {
+    list-style: circle;
+}
+
+#yatmo-plugin-generator .hidden {
+    display: none !important;
+}
+
+#yatmo-plugin-generator input[type="color"] {
+    width: 44px;
+    height: 40px;
+    padding: 0;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: #fff;
+    cursor: pointer;
+}
+
+#yatmo-plugin-generator input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 6px;
+}
+
+#yatmo-plugin-generator input[type="color"]::-webkit-color-swatch {
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,.10);
+}
+
+/* Address autocomplete */
+#yatmo-plugin-generator .pg-autocomplete {
+    position: relative;
+}
+
+#yatmo-plugin-generator .pg-autocomplete-results {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(100% + 6px);
+    z-index: 9999;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,.18);
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0,0,0,.14);
+    overflow: hidden;
+    max-height: 260px;
+    overflow-y: auto;
+}
+
+#yatmo-plugin-generator .pg-autocomplete-item {
+    padding: 10px 12px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 13px;
+    line-height: 1.25;
+    border-bottom: 1px solid rgba(0,0,0,.08);
+}
+
+#yatmo-plugin-generator .pg-autocomplete-item:last-child {
+    border-bottom: 0;
+}
+
+#yatmo-plugin-generator .pg-autocomplete-item:hover {
+    background: rgba(66,139,255,.10);
+}
+
+#yatmo-plugin-generator .pg-autocomplete-item strong {
+    display: block;
+    font-weight: 900;
+    color: #0f172a;
+}
+
+#yatmo-plugin-generator .pg-autocomplete-item .muted {
+    display: block;
+    margin-top: 2px;
+    color: #6b7280;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+    #yatmo-plugin-generator .grid {
+        grid-template-columns: 1fr;
+    }
+
+    #yatmo-plugin-generator .previews {
+        grid-template-columns: 1fr;
+    }
+
+    #yatmo-plugin-generator .mobileShell {
+        width: 340px;
+    }
+}
+
+/* Hide desktop mobile preview on real mobile devices */
+@media (max-width: 768px), (pointer: coarse) {
+    #yatmo-plugin-generator .device.device-mobile-preview {
+        display: none !important;
+    }
 }

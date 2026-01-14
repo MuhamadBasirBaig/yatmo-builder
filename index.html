@@ -25,533 +25,536 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    
-
-    <div style="height: 100%;" class="container pt-5">
-      <div class="row">
-        <h4 class="main-text mb-4">
-          <span class="blue-color">Try it yourself!</span> You can directly
-          configure your Map here below and see immediately the result
-        </h4>
-        <div class="col-lg-8">
-          <div class="config-section">
-            <div class="custom-tabs-wrapper">
-              <div class="custom-tabs">
-                <button
-                  class="custom-tab-btn active text-left"
-                  data-tab="configuration"
-                >
-                  <svg
-                    class="me-2 svg-icon"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="30"
-                    height="30"
-                    viewBox="0 0 30 30"
-                    fill="currentColor"
+    <div id="yatmo-plugin-generator">
+      <div style="height: 100%" class="container pt-5">
+        <div class="row">
+          <h4 class="main-text mb-4">
+            <span class="blue-color">Try it yourself!</span> You can directly
+            configure your Map here below and see immediately the result
+          </h4>
+          <div class="col-lg-8">
+            <div class="config-section">
+              <div class="custom-tabs-wrapper">
+                <div class="custom-tabs">
+                  <button
+                    class="custom-tab-btn active text-left"
+                    data-tab="configuration"
                   >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M13.7501 4.99976L13.7499 17.5H12.4999V20H13.7499L13.7501 24.9998H16.2501L16.2499 20H17.4999V17.5H16.2499L16.2501 4.99976H13.7501ZM6.24976 4.99976V10.001H4.99976V12.4998H6.24976V24.9998H8.74976V12.4998H9.99976V10.001H8.74976V4.99976H6.24976ZM21.2486 5.00001V12.5H19.9986L19.9994 14.9998H21.2494V24.9998H23.7506V14.9998H25.0006L24.9999 12.5H23.7499L23.7506 4.99976L21.2486 5.00001Z"
-                     fill="currentColor"
-                    />
-                  </svg>
-                  CONFIGURATION
-                </button>
-                <button class="custom-tab-btn text-left" data-tab="code">
-                  <svg
-                    class="me-2 svg-icon"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="32"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    stroke="currentColor"
-                  >
-                    <path
-                      d="M11.3333 10.6667L6 15.5897L11.3333 21.3333M24.6667 10.6667L30 15.5897L24.6667 21.3333M20.6667 5.33334L15.3333 26.6667"
+                    <svg
+                      class="me-2 svg-icon"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="30"
+                      height="30"
+                      viewBox="0 0 30 30"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M13.7501 4.99976L13.7499 17.5H12.4999V20H13.7499L13.7501 24.9998H16.2501L16.2499 20H17.4999V17.5H16.2499L16.2501 4.99976H13.7501ZM6.24976 4.99976V10.001H4.99976V12.4998H6.24976V24.9998H8.74976V12.4998H9.99976V10.001H8.74976V4.99976H6.24976ZM21.2486 5.00001V12.5H19.9986L19.9994 14.9998H21.2494V24.9998H23.7506V14.9998H25.0006L24.9999 12.5H23.7499L23.7506 4.99976L21.2486 5.00001Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                    CONFIGURATION
+                  </button>
+                  <button class="custom-tab-btn text-left" data-tab="code">
+                    <svg
+                      class="me-2 svg-icon"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
                       stroke="currentColor"
-                      stroke-width="2.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  CODE
-                </button>
-              </div>
-              <div class="custom-tab-content">
-                <div
-                  class="custom-tab-pane active"
-                  id="configuration-tab-content"
-                >
-                  <div class="body">
-                    <form id="pluginForm">
-                      <div class="accordion" id="configAccordion">
-                        <!-- Map Style -->
-                        <div class="accordion-item">
-                          <h2 class="accordion-header">
-                            <button
-                              class="accordion-button"
-                              type="button"
-                              data-bs-toggle="collapse"
-                              data-bs-target="#collapseMapStyle"
-                              aria-expanded="true"
-                              aria-controls="collapseMapStyle"
+                    >
+                      <path
+                        d="M11.3333 10.6667L6 15.5897L11.3333 21.3333M24.6667 10.6667L30 15.5897L24.6667 21.3333M20.6667 5.33334L15.3333 26.6667"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    CODE
+                  </button>
+                </div>
+                <div class="custom-tab-content">
+                  <div
+                    class="custom-tab-pane active"
+                    id="configuration-tab-content"
+                  >
+                    <div class="body">
+                      <form id="pluginForm">
+                        <div class="accordion" id="configAccordion">
+                          <!-- Map Style -->
+                          <div class="accordion-item">
+                            <h2 class="accordion-header">
+                              <button
+                                class="accordion-button"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseMapStyle"
+                                aria-expanded="true"
+                                aria-controls="collapseMapStyle"
+                              >
+                                <img
+                                  src="assests/element.png"
+                                  alt="element"
+                                  width="32px"
+                                />
+                                &nbsp;&nbsp; Display Elements
+                              </button>
+                            </h2>
+                            <div
+                              id="collapseMapStyle"
+                              class="accordion-collapse collapse show"
+                              data-bs-parent="#configAccordion"
                             >
-                              <img
-                                src="assests/element.png"
-                                alt="element"
-                                width="32px"
-                              />
-                              &nbsp;&nbsp; Display Elements
-                            </button>
-                          </h2>
-                          <div
-                            id="collapseMapStyle"
-                            class="accordion-collapse collapse show"
-                            data-bs-parent="#configAccordion"
-                          >
-                            <div class="accordion-body">
-                              <div class="row">
-                                <div>
-                                  <label for="latitude" class="form-label"
-                                    >Choose what you want to dispaly</label
-                                  >
-                                  <select
-                                    class="form-select"
-                                    aria-label="Default select example"
-                                  >
-                                    <option selected>
-                                      Open this select menu
-                                    </option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                  </select>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <!-- Mode -->
-                        <div class="accordion-item">
-                          <h2 class="accordion-header">
-                            <button
-                              class="accordion-button collapsed"
-                              type="button"
-                              data-bs-toggle="collapse"
-                              data-bs-target="#collapseMode"
-                              aria-expanded="false"
-                              aria-controls="collapseMode"
-                            >
-                              <img
-                                src="assests/map.png"
-                                alt="element"
-                                width="32px"
-                              />
-                              &nbsp;&nbsp; Map Style
-                            </button>
-                          </h2>
-                          <div
-                            id="collapseMode"
-                            class="accordion-collapse collapse"
-                            data-bs-parent="#configAccordion"
-                          >
-                            <div class="accordion-body">
-                              <div class="row">
-                                <div>
-                                  <label for="latitude" class="form-label"
-                                    >Mode</label
-                                  >
-                                  <select
-                                    class="form-select"
-                                    aria-label="Default select example"
-                                  >
-                                    <option selected>
-                                      Open this select menu
-                                    </option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                  </select>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <!-- Country and Language -->
-                        <div class="accordion-item">
-                          <h2 class="accordion-header">
-                            <button
-                              class="accordion-button collapsed"
-                              type="button"
-                              data-bs-toggle="collapse"
-                              data-bs-target="#collapseCountryLanguage"
-                              aria-expanded="false"
-                              aria-controls="collapseCountryLanguage"
-                            >
-                              <img
-                                src="assests/location.png"
-                                alt="element"
-                                width="32px"
-                              />
-                              &nbsp;&nbsp; Location
-                            </button>
-                          </h2>
-                          <div
-                            id="collapseCountryLanguage"
-                            class="accordion-collapse collapse"
-                            data-bs-parent="#configAccordion"
-                          >
-                            <div class="accordion-body">
-                              <div class="row">
-                                <div>
-                                  <label for="country" class="form-label"
-                                    >Country</label
-                                  >
-                                  <select
-                                    class="form-select"
-                                    id="country"
-                                    name="country"
-                                  >
-                                    <option value="BE">BE</option>
-                                    <option value="FR">FR</option>
-                                    <option value="NL">NL</option>
-                                    <option value="LU">LU</option>
-                                    <option value="CH">CH</option>
-                                    <option value="DE">DE</option>
-                                    <option value="IT">IT</option>
-                                    <option value="ES">ES</option>
-                                    <option value="PT">PT</option>
-                                  </select>
-                                </div>
-                                <div>
-                                  <label for="language" class="form-label"
-                                    >Language</label
-                                  >
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    id="language"
-                                    name="language"
-                                    placeholder="en"
-                                  />
-                                </div>
-                              </div>
-                              <div class="row">
-                                <div>
-                                  <label for="language" class="form-label"
-                                    >Latitude</label
-                                  >
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    id="language"
-                                    name="language"
-                                    placeholder="en"
-                                  />
-                                </div>
-                                <div>
-                                  <label for="language" class="form-label"
-                                    >Longitude</label
-                                  >
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    id="language"
-                                    name="language"
-                                    placeholder="en"
-                                  />
-                                </div>
-                                <p style="font-size: 13px; color: #6b7280">
-                                  Dot format. Commas are auto-converted to dots.
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <!-- Latitude and Longitude -->
-                        <div class="accordion-item">
-                          <h2 class="accordion-header">
-                            <button
-                              class="accordion-button collapsed"
-                              type="button"
-                              data-bs-toggle="collapse"
-                              data-bs-target="#collapseLatLng"
-                              aria-expanded="false"
-                              aria-controls="collapseLatLng"
-                            >
-                              <img
-                                src="assests/color.png"
-                                alt="element"
-                                width="32px"
-                              />
-                              &nbsp;&nbsp; Pin Style
-                            </button>
-                          </h2>
-                          <div
-                            id="collapseLatLng"
-                            class="accordion-collapse collapse"
-                            data-bs-parent="#configAccordion"
-                          >
-                            <div class="accordion-body">
-                              <div class="row">
-                                <div>
-                                  <label for="country" class="form-label"
-                                    >Pin or Circle</label
-                                  >
-                                  <select
-                                    class="form-select"
-                                    id="country"
-                                    name="country"
-                                  >
-                                    <option value="BE">BE</option>
-                                  </select>
-                                </div>
-                              </div>
-                              <div class="row">
-                                <div class="col-12">
-                                  <label for="color" class="form-label"
-                                    >Accent color (pin icon, etc.)</label
-                                  >
-                                  <div class="d-flex align-items-center">
-                                    <!-- Fixed square color picker -->
-                                    <input
-                                      type="color"
-                                      id="colorPicker"
-                                      class="form-control form-control-color flex-shrink-0"
-                                      value="#ff0000"
-                                      title="Choose your color"
-                                      style="
-                                        width: 38px;
-                                        height: 38px;
-                                        padding: 0;
-                                        border-radius: 0;
-                                        border: none;
-                                      "
-                                    />
-                                    <!-- Custom color input fills remaining space -->
-                                    <input
-                                      type="text"
-                                      id="customColor"
-                                      class="form-control ms-2"
-                                      placeholder="#ff0000"
-                                    />
+                              <div class="accordion-body">
+                                <div class="row">
+                                  <div>
+                                    <label for="latitude" class="form-label"
+                                      >Choose what you want to dispaly</label
+                                    >
+                                    <select
+                                      class="form-select"
+                                      aria-label="Default select example"
+                                    >
+                                      <option selected>
+                                        Open this select menu
+                                      </option>
+                                      <option value="1">One</option>
+                                      <option value="2">Two</option>
+                                      <option value="3">Three</option>
+                                    </select>
                                   </div>
                                 </div>
                               </div>
                             </div>
                           </div>
-                        </div>
 
-                        <!-- Pin or Circle -->
-                        <div class="accordion-item">
-                          <h2 class="accordion-header">
-                            <button
-                              class="accordion-button collapsed"
-                              type="button"
-                              data-bs-toggle="collapse"
-                              data-bs-target="#collapseMarkerType"
-                              aria-expanded="false"
-                              aria-controls="collapseMarkerType"
+                          <!-- Mode -->
+                          <div class="accordion-item">
+                            <h2 class="accordion-header">
+                              <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseMode"
+                                aria-expanded="false"
+                                aria-controls="collapseMode"
+                              >
+                                <img
+                                  src="assests/map.png"
+                                  alt="element"
+                                  width="32px"
+                                />
+                                &nbsp;&nbsp; Map Style
+                              </button>
+                            </h2>
+                            <div
+                              id="collapseMode"
+                              class="accordion-collapse collapse"
+                              data-bs-parent="#configAccordion"
                             >
-                              <img
-                                src="assests/zoom.png"
-                                alt="element"
-                                width="32px"
-                              />
-                              &nbsp;&nbsp; Zoom Level
-                            </button>
-                          </h2>
+                              <div class="accordion-body">
+                                <div class="row">
+                                  <div>
+                                    <label for="latitude" class="form-label"
+                                      >Mode</label
+                                    >
+                                    <select
+                                      class="form-select"
+                                      aria-label="Default select example"
+                                    >
+                                      <option selected>
+                                        Open this select menu
+                                      </option>
+                                      <option value="1">One</option>
+                                      <option value="2">Two</option>
+                                      <option value="3">Three</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Country and Language -->
+                          <div class="accordion-item">
+                            <h2 class="accordion-header">
+                              <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseCountryLanguage"
+                                aria-expanded="false"
+                                aria-controls="collapseCountryLanguage"
+                              >
+                                <img
+                                  src="assests/location.png"
+                                  alt="element"
+                                  width="32px"
+                                />
+                                &nbsp;&nbsp; Location
+                              </button>
+                            </h2>
+                            <div
+                              id="collapseCountryLanguage"
+                              class="accordion-collapse collapse"
+                              data-bs-parent="#configAccordion"
+                            >
+                              <div class="accordion-body">
+                                <div class="row">
+                                  <div>
+                                    <label for="country" class="form-label"
+                                      >Country</label
+                                    >
+                                    <select
+                                      class="form-select"
+                                      id="country"
+                                      name="country"
+                                    >
+                                      <option value="BE">BE</option>
+                                      <option value="FR">FR</option>
+                                      <option value="NL">NL</option>
+                                      <option value="LU">LU</option>
+                                      <option value="CH">CH</option>
+                                      <option value="DE">DE</option>
+                                      <option value="IT">IT</option>
+                                      <option value="ES">ES</option>
+                                      <option value="PT">PT</option>
+                                    </select>
+                                  </div>
+                                  <div>
+                                    <label for="language" class="form-label"
+                                      >Language</label
+                                    >
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      id="language"
+                                      name="language"
+                                      placeholder="en"
+                                    />
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div>
+                                    <label for="language" class="form-label"
+                                      >Latitude</label
+                                    >
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      id="language"
+                                      name="language"
+                                      placeholder="en"
+                                    />
+                                  </div>
+                                  <div>
+                                    <label for="language" class="form-label"
+                                      >Longitude</label
+                                    >
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      id="language"
+                                      name="language"
+                                      placeholder="en"
+                                    />
+                                  </div>
+                                  <p style="font-size: 13px; color: #6b7280">
+                                    Dot format. Commas are auto-converted to
+                                    dots.
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Latitude and Longitude -->
+                          <div class="accordion-item">
+                            <h2 class="accordion-header">
+                              <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseLatLng"
+                                aria-expanded="false"
+                                aria-controls="collapseLatLng"
+                              >
+                                <img
+                                  src="assests/color.png"
+                                  alt="element"
+                                  width="32px"
+                                />
+                                &nbsp;&nbsp; Pin Style
+                              </button>
+                            </h2>
+                            <div
+                              id="collapseLatLng"
+                              class="accordion-collapse collapse"
+                              data-bs-parent="#configAccordion"
+                            >
+                              <div class="accordion-body">
+                                <div class="row">
+                                  <div>
+                                    <label for="country" class="form-label"
+                                      >Pin or Circle</label
+                                    >
+                                    <select
+                                      class="form-select"
+                                      id="country"
+                                      name="country"
+                                    >
+                                      <option value="BE">BE</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-12">
+                                    <label for="color" class="form-label"
+                                      >Accent color (pin icon, etc.)</label
+                                    >
+                                    <div class="d-flex align-items-center">
+                                      <!-- Fixed square color picker -->
+                                      <input
+                                        type="color"
+                                        id="colorPicker"
+                                        class="form-control form-control-color flex-shrink-0"
+                                        value="#ff0000"
+                                        title="Choose your color"
+                                        style="
+                                          width: 38px;
+                                          height: 38px;
+                                          padding: 0;
+                                          border-radius: 0;
+                                          border: none;
+                                        "
+                                      />
+                                      <!-- Custom color input fills remaining space -->
+                                      <input
+                                        type="text"
+                                        id="customColor"
+                                        class="form-control ms-2"
+                                        placeholder="#ff0000"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Pin or Circle -->
+                          <div class="accordion-item">
+                            <h2 class="accordion-header">
+                              <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseMarkerType"
+                                aria-expanded="false"
+                                aria-controls="collapseMarkerType"
+                              >
+                                <img
+                                  src="assests/zoom.png"
+                                  alt="element"
+                                  width="32px"
+                                />
+                                &nbsp;&nbsp; Zoom Level
+                              </button>
+                            </h2>
+                            <div
+                              id="collapseMarkerType"
+                              class="accordion-collapse collapse"
+                              data-bs-parent="#configAccordion"
+                            >
+                              <div class="accordion-body">
+                                <div class="row">
+                                  <div class="mb-3">
+                                    <label for="markerSize" class="form-label"
+                                      >Zoom Level</label
+                                    >
+                                    <input
+                                      type="range"
+                                      class="form-range"
+                                      min="2"
+                                      max="20"
+                                      step="1"
+                                      id="markerSize"
+                                      value="15"
+                                    />
+                                    <div
+                                      class="d-flex justify-content-between mt-1 px-1"
+                                    >
+                                      <span>2</span>
+                                      <span>15</span>
+                                      <span>20</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Circle Radius -->
                           <div
-                            id="collapseMarkerType"
-                            class="accordion-collapse collapse"
-                            data-bs-parent="#configAccordion"
+                            class="accordion-item"
+                            id="circleRadiusGroup"
+                            style="display: none"
                           >
-                            <div class="accordion-body">
-                              <div class="row">
-                                <div class="mb-3">
-                                  <label for="markerSize" class="form-label"
-                                    >Zoom Level</label
-                                  >
+                            <h2 class="accordion-header">
+                              <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseCircleRadius"
+                                aria-expanded="false"
+                                aria-controls="collapseCircleRadius"
+                              >
+                                <i
+                                  class="bi bi-circle-fill text-primary me-2"
+                                ></i>
+                                Circle Radius
+                              </button>
+                            </h2>
+                            <div
+                              id="collapseCircleRadius"
+                              class="accordion-collapse collapse"
+                              data-bs-parent="#configAccordion"
+                            >
+                              <div class="accordion-body">
+                                <label for="circleRadius" class="form-label"
+                                  >Circle radius (meters)</label
+                                >
+                                <div class="rangeWrap">
                                   <input
                                     type="range"
                                     class="form-range"
-                                    min="2"
-                                    max="20"
-                                    step="1"
-                                    id="markerSize"
-                                    value="15"
+                                    id="circleRadius"
+                                    name="circleRadius"
+                                    min="50"
+                                    max="2000"
+                                    value="500"
+                                    step="50"
                                   />
-                                  <div
-                                    class="d-flex justify-content-between mt-1 px-1"
-                                  >
-                                    <span>2</span>
-                                    <span>15</span>
-                                    <span>20</span>
+                                  <div class="rangeMeta">
+                                    <span>50</span>
+                                    <span id="radiusValue">500 m</span>
+                                    <span>2000</span>
                                   </div>
                                 </div>
                               </div>
                             </div>
                           </div>
-                        </div>
 
-                        <!-- Circle Radius -->
-                        <div
-                          class="accordion-item"
-                          id="circleRadiusGroup"
-                          style="display: none"
-                        >
-                          <h2 class="accordion-header">
-                            <button
-                              class="accordion-button collapsed"
-                              type="button"
-                              data-bs-toggle="collapse"
-                              data-bs-target="#collapseCircleRadius"
-                              aria-expanded="false"
-                              aria-controls="collapseCircleRadius"
-                            >
-                              <i
-                                class="bi bi-circle-fill text-primary me-2"
-                              ></i>
-                              Circle Radius
-                            </button>
-                          </h2>
+                          <!-- Custom Marker URL -->
                           <div
-                            id="collapseCircleRadius"
-                            class="accordion-collapse collapse"
-                            data-bs-parent="#configAccordion"
+                            class="accordion-item"
+                            id="customMarkerGroup"
+                            style="display: none"
                           >
-                            <div class="accordion-body">
-                              <label for="circleRadius" class="form-label"
-                                >Circle radius (meters)</label
+                            <h2 class="accordion-header">
+                              <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseCustomMarker"
+                                aria-expanded="false"
+                                aria-controls="collapseCustomMarker"
                               >
-                              <div class="rangeWrap">
+                                <i class="bi bi-image text-primary me-2"></i>
+                                Custom Marker
+                              </button>
+                            </h2>
+                            <div
+                              id="collapseCustomMarker"
+                              class="accordion-collapse collapse"
+                              data-bs-parent="#configAccordion"
+                            >
+                              <div class="accordion-body">
+                                <label for="customMarkerUrl" class="form-label"
+                                  >Custom marker URL</label
+                                >
                                 <input
-                                  type="range"
-                                  class="form-range"
-                                  id="circleRadius"
-                                  name="circleRadius"
-                                  min="50"
-                                  max="2000"
-                                  value="500"
-                                  step="50"
+                                  type="url"
+                                  class="form-control"
+                                  id="customMarkerUrl"
+                                  name="customMarkerUrl"
+                                  placeholder="https://example.com/marker.png"
                                 />
-                                <div class="rangeMeta">
-                                  <span>50</span>
-                                  <span id="radiusValue">500 m</span>
-                                  <span>2000</span>
+                                <div class="hint">
+                                  Direct image URL (png/svg/webp). Must be
+                                  publicly accessible.
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
-
-                        <!-- Custom Marker URL -->
-                        <div
-                          class="accordion-item"
-                          id="customMarkerGroup"
-                          style="display: none"
-                        >
-                          <h2 class="accordion-header">
-                            <button
-                              class="accordion-button collapsed"
-                              type="button"
-                              data-bs-toggle="collapse"
-                              data-bs-target="#collapseCustomMarker"
-                              aria-expanded="false"
-                              aria-controls="collapseCustomMarker"
-                            >
-                              <i class="bi bi-image text-primary me-2"></i>
-                              Custom Marker
-                            </button>
-                          </h2>
-                          <div
-                            id="collapseCustomMarker"
-                            class="accordion-collapse collapse"
-                            data-bs-parent="#configAccordion"
+                      </form>
+                    </div>
+                  </div>
+                  <div class="custom-tab-pane" id="code-tab-content">
+                    <div class="body">
+                      <div class="codeBox">
+                        <div class="head">
+                          <h2>COPY-PASTE EMBED CODE</h2>
+                          <button
+                            style="
+                              background: none;
+                              border: none;
+                              padding: 0;
+                              cursor: pointer;
+                            "
+                            id="copyButton"
                           >
-                            <div class="accordion-body">
-                              <label for="customMarkerUrl" class="form-label"
-                                >Custom marker URL</label
-                              >
-                              <input
-                                type="url"
-                                class="form-control"
-                                id="customMarkerUrl"
-                                name="customMarkerUrl"
-                                placeholder="https://example.com/marker.png"
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="30"
+                              height="30"
+                              viewBox="0 0 30 30"
+                              fill="none"
+                            >
+                              <path
+                                d="M19.05 2.5H14.1823C11.977 2.49999 10.2302 2.49996 8.86317 2.6845C7.45626 2.87441 6.31752 3.27455 5.41949 4.1762C4.52146 5.07784 4.12291 6.22115 3.93376 7.63371C3.74996 9.00625 3.74999 10.76 3.75 12.9741V20.2711C3.75 22.1562 4.89994 23.7717 6.53396 24.449C6.44986 23.3123 6.44993 21.7171 6.45 20.39V14.247V14.128C6.44991 12.5259 6.44983 11.1455 6.59785 10.0401C6.75649 8.85548 7.11424 7.7199 8.03163 6.79883C8.94901 5.87774 10.0801 5.51856 11.26 5.35929C12.361 5.21068 13.7359 5.21075 15.3315 5.21084L15.45 5.21085H19.05L19.1685 5.21084C20.7641 5.21075 22.136 5.21068 23.237 5.35929C22.5784 3.68474 20.952 2.5 19.05 2.5Z"
+                                fill="#6B7280"
                               />
-                              <div class="hint">
-                                Direct image URL (png/svg/webp). Must be
-                                publicly accessible.
-                              </div>
-                            </div>
-                          </div>
+                              <path
+                                d="M8.25 14.2467C8.25 10.839 8.25 9.13512 9.30441 8.07647C10.3588 7.01782 12.0559 7.01782 15.45 7.01782H19.05C22.4441 7.01782 24.1411 7.01782 25.1956 8.07647C26.25 9.13512 26.25 10.839 26.25 14.2467V20.2709C26.25 23.6786 26.25 25.3825 25.1956 26.4411C24.1411 27.4997 22.4441 27.4997 19.05 27.4997H15.45C12.0559 27.4997 10.3588 27.4997 9.30441 26.4411C8.25 25.3825 8.25 23.6786 8.25 20.2709V14.2467Z"
+                                fill="#6B7280"
+                              />
+                            </svg>
+                          </button>
+                        </div>
+                        <div class="body">
+                          <textarea id="code" readonly>
+<iframe src="https://map.yatmo.com/plugin.html?country=BE&language=EN&latitude=50.8346645&longitude=4.3135979&accentColor=%234B4416&licenseKey=YOUR_LICENSE_KEY&mapStyle=1&mode=overlay&marker=pin&zoom=20" loading="lazy" style="width:100%;height:520px" frameborder="0"></iframe></textarea
+                          >
                         </div>
                       </div>
-                    </form>
-                  </div>
-                </div>
-                <div class="custom-tab-pane" id="code-tab-content">
-                  <div class="body">
-                    <div class="codeBox">
-                      <div class="head">
-                        <h2>COPY-PASTE EMBED CODE</h2>
-                        <button
-                          style="
-                            background: none;
-                            border: none;
-                            padding: 0;
-                            cursor: pointer;
-                          "
-                          id="copyButton"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="30"
-                            height="30"
-                            viewBox="0 0 30 30"
-                            fill="none"
-                          >
-                            <path
-                              d="M19.05 2.5H14.1823C11.977 2.49999 10.2302 2.49996 8.86317 2.6845C7.45626 2.87441 6.31752 3.27455 5.41949 4.1762C4.52146 5.07784 4.12291 6.22115 3.93376 7.63371C3.74996 9.00625 3.74999 10.76 3.75 12.9741V20.2711C3.75 22.1562 4.89994 23.7717 6.53396 24.449C6.44986 23.3123 6.44993 21.7171 6.45 20.39V14.247V14.128C6.44991 12.5259 6.44983 11.1455 6.59785 10.0401C6.75649 8.85548 7.11424 7.7199 8.03163 6.79883C8.94901 5.87774 10.0801 5.51856 11.26 5.35929C12.361 5.21068 13.7359 5.21075 15.3315 5.21084L15.45 5.21085H19.05L19.1685 5.21084C20.7641 5.21075 22.136 5.21068 23.237 5.35929C22.5784 3.68474 20.952 2.5 19.05 2.5Z"
-                              fill="#6B7280"
-                            />
-                            <path
-                              d="M8.25 14.2467C8.25 10.839 8.25 9.13512 9.30441 8.07647C10.3588 7.01782 12.0559 7.01782 15.45 7.01782H19.05C22.4441 7.01782 24.1411 7.01782 25.1956 8.07647C26.25 9.13512 26.25 10.839 26.25 14.2467V20.2709C26.25 23.6786 26.25 25.3825 25.1956 26.4411C24.1411 27.4997 22.4441 27.4997 19.05 27.4997H15.45C12.0559 27.4997 10.3588 27.4997 9.30441 26.4411C8.25 25.3825 8.25 23.6786 8.25 20.2709V14.2467Z"
-                              fill="#6B7280"
-                            />
-                          </svg>
-                        </button>
-                      </div>
-                      <div class="body">
-                        <textarea id="code" readonly ><iframe src="https://map.yatmo.com/plugin.html?country=BE&language=EN&latitude=50.8346645&longitude=4.3135979&accentColor=%234B4416&licenseKey=YOUR_LICENSE_KEY&mapStyle=1&mode=overlay&marker=pin&zoom=20" loading="lazy" style="width:100%;height:520px" frameborder="0"></iframe></textarea>
-                      </div>
-                    </div>
-                    <div class="tips-section">
-                      <div class="head">
-                        <h2>Tips</h2>
-                      </div>
-                      <div class="body">
-                        <div class="note">
-                          For best results on client websites:
-                          <ul>
-                            <li>
-                              Set a fixed height (e.g. 520px) or a responsive
-                              height with CSS.
-                            </li>
-                            <li>
-                              Use <code>loading="lazy"</code> for performance if
-                              desired.
-                            </li>
-                            <li>
-                              Use HTTPS pages if you embed the plugin on HTTPS
-                              websites.
-                            </li>
-                          </ul>
+                      <div class="tips-section">
+                        <div class="head">
+                          <h2>Tips</h2>
+                        </div>
+                        <div class="body">
+                          <div class="note">
+                            For best results on client websites:
+                            <ul>
+                              <li>
+                                Set a fixed height (e.g. 520px) or a responsive
+                                height with CSS.
+                              </li>
+                              <li>
+                                Use <code>loading="lazy"</code> for performance
+                                if desired.
+                              </li>
+                              <li>
+                                Use HTTPS pages if you embed the plugin on HTTPS
+                                websites.
+                              </li>
+                            </ul>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -560,295 +563,266 @@
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="col-lg-4">
-          <div class="preview-section">
-            <div class="head">
-              <h2 id="previewTitle">LIVE PREVIEW (DESKTOP)</h2>
+          <div class="col-lg-4">
+            <div class="preview-section">
+              <div class="head">
+                <h2 id="previewTitle">LIVE PREVIEW (DESKTOP)</h2>
 
-              <div class="view-switch">
-                <button class="switch-btn active" title="Desktop">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 18 18"
-                    fill="none"
-                  >
-                    <g clip-path="url(#clip0_8_44)">
+                <div class="view-switch">
+                  <button class="switch-btn active" title="Desktop">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 18 18"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_8_44)">
+                        <path
+                          d="M14.9999 2.14285H2.14272C1.55098 2.14285 1.07129 2.62255 1.07129 3.21428V11.7857C1.07129 12.3774 1.55098 12.8571 2.14272 12.8571H14.9999C15.5916 12.8571 16.0713 12.3774 16.0713 11.7857V3.21428C16.0713 2.62255 15.5916 2.14285 14.9999 2.14285Z"
+                          fill="#06A7EA"
+                          stroke="white"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M10.1786 15L9.91078 12.8571H7.23221L6.96436 15H10.1786Z"
+                          fill="white"
+                          stroke="white"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M12.3213 15H4.82129"
+                          stroke="white"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M15.5713 10.6786V11.786C15.5704 11.9372 15.5103 12.0824 15.4033 12.1893C15.296 12.2966 15.1498 12.3568 14.998 12.3573H9.43457C9.54595 12.189 9.60737 11.9907 9.60742 11.786C9.60742 11.5811 9.54642 11.3801 9.43262 11.2098C9.31885 11.0397 9.15686 10.9073 8.96777 10.8289C8.77852 10.7506 8.57005 10.7304 8.36914 10.7704C8.1683 10.8103 7.98367 10.9088 7.83887 11.0536C7.6941 11.1984 7.59561 11.383 7.55566 11.5838C7.51574 11.7847 7.53588 11.9933 7.61426 12.1825C7.63997 12.2445 7.67414 12.3019 7.71094 12.3573H2.14453C1.99277 12.3568 1.84659 12.2966 1.73926 12.1893C1.65874 12.1088 1.60522 12.0063 1.58301 11.8963L1.57129 11.784V10.6786H15.5713Z"
+                          fill="white"
+                          stroke="white"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_8_44">
+                          <rect width="17.1429" height="17.1429" fill="white" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </button>
+                  <button class="switch-btn" title="Mobile">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 18 18"
+                      fill="none"
+                    >
                       <path
-                        d="M14.9999 2.14285H2.14272C1.55098 2.14285 1.07129 2.62255 1.07129 3.21428V11.7857C1.07129 12.3774 1.55098 12.8571 2.14272 12.8571H14.9999C15.5916 12.8571 16.0713 12.3774 16.0713 11.7857V3.21428C16.0713 2.62255 15.5916 2.14285 14.9999 2.14285Z"
-                        fill="#06A7EA"
-                        stroke="white"
-                        stroke-linejoin="round"
+                        d="M9.2855 13.5714C9.2855 13.9659 8.96572 14.2857 8.57122 14.2857C8.17672 14.2857 7.85693 13.9659 7.85693 13.5714C7.85693 13.1769 8.17672 12.8571 8.57122 12.8571C8.96572 12.8571 9.2855 13.1769 9.2855 13.5714Z"
+                        fill="#6B7280"
                       />
                       <path
-                        d="M10.1786 15L9.91078 12.8571H7.23221L6.96436 15H10.1786Z"
-                        fill="white"
-                        stroke="white"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M6.5957 0.714295L6.63044 0.714302C6.63586 0.714295 6.64129 0.714295 6.64671 0.714302H10.4959C10.5013 0.714295 10.5067 0.714295 10.5121 0.714302L10.5469 0.714295C10.564 0.714295 10.5806 0.714293 10.5968 0.714302H10.7141C10.7259 0.714302 10.7375 0.71458 10.7491 0.715138C10.8106 0.71603 10.8654 0.717838 10.9171 0.721516C12.3351 0.822473 13.4631 1.95054 13.5641 3.36853C13.5714 3.47045 13.5713 3.58457 13.5713 3.73869V12.2943C13.5713 12.8789 13.5713 13.3615 13.5387 13.7544C13.5048 14.1624 13.432 14.5374 13.2496 14.8885C12.9786 15.4104 12.5531 15.8359 12.0312 16.1069C11.6801 16.2893 11.3051 16.3621 10.8971 16.396C10.5042 16.4286 10.0217 16.4286 9.43708 16.4286H7.70551C7.12091 16.4286 6.63837 16.4286 6.24553 16.396C5.83743 16.3621 5.46254 16.2893 5.11137 16.1069C4.58953 15.8359 4.16405 15.4104 3.89297 14.8885C3.71056 14.5374 3.6378 14.1624 3.60391 13.7544C3.57128 13.3615 3.57128 12.8789 3.5713 12.2943L3.57129 3.7387C3.57127 3.58458 3.57126 3.47045 3.57851 3.36853C3.67947 1.95054 4.80754 0.822473 6.22553 0.721516C6.27718 0.717838 6.33196 0.71603 6.39348 0.715138C6.40507 0.71458 6.41672 0.714302 6.42844 0.714302H6.54582C6.56198 0.714293 6.5786 0.714295 6.5957 0.714295ZM6.62237 2.14287C6.43 2.14287 6.37126 2.14332 6.32698 2.14648C5.61799 2.19696 5.05396 2.76099 5.00348 3.46999C5.00032 3.51427 4.99987 3.573 4.99987 3.76537V12.2643C4.99987 12.8864 5.00044 13.3094 5.02758 13.6362C5.054 13.9543 5.10186 14.1167 5.16071 14.23C5.29624 14.4909 5.50898 14.7037 5.76991 14.8392C5.88318 14.898 6.04559 14.9459 6.36376 14.9723C6.69048 14.9994 7.11343 15 7.73558 15H9.40701C10.0291 15 10.4521 14.9994 10.7789 14.9723C11.097 14.9459 11.2594 14.898 11.3727 14.8392C11.6336 14.7037 11.8464 14.4909 11.9819 14.23C12.0407 14.1167 12.0886 13.9543 12.115 13.6362C12.1421 13.3094 12.1427 12.8864 12.1427 12.2643V3.76537C12.1427 3.573 12.1423 3.51427 12.1391 3.46999C12.0886 2.76099 11.5246 2.19696 10.8156 2.14648C10.7714 2.14332 10.7126 2.14287 10.5202 2.14287C10.4724 2.14287 10.4671 2.14299 10.4635 2.14313C10.3717 2.14661 10.2848 2.18532 10.2209 2.25121C10.2183 2.25379 10.2146 2.25769 10.1827 2.29319L9.83365 2.68103L9.82472 2.69088C9.82051 2.69545 9.81229 2.70436 9.80179 2.71492C9.77943 2.73737 9.73929 2.77528 9.68222 2.81288C9.61379 2.85792 9.53851 2.89146 9.45929 2.91216C9.39315 2.92944 9.33808 2.93394 9.30651 2.93551C9.29158 2.93624 9.27943 2.93641 9.27329 2.93647L9.26001 2.93652H7.88265L7.86929 2.93647C7.86315 2.93641 7.85101 2.93624 7.83615 2.93551C7.80451 2.93394 7.74943 2.92944 7.68329 2.91216C7.60408 2.89146 7.52879 2.85792 7.46036 2.81288C7.40329 2.77528 7.36315 2.73737 7.34079 2.71492C7.33036 2.70436 7.32208 2.69545 7.31786 2.69088L7.30893 2.68103L6.9599 2.29319C6.92795 2.25769 6.92428 2.25379 6.92176 2.25121C6.85778 2.18532 6.77087 2.14661 6.67909 2.14313C6.67548 2.14299 6.67013 2.14287 6.62237 2.14287Z"
+                        fill="#6B7280"
                       />
-                      <path
-                        d="M12.3213 15H4.82129"
-                        stroke="white"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M15.5713 10.6786V11.786C15.5704 11.9372 15.5103 12.0824 15.4033 12.1893C15.296 12.2966 15.1498 12.3568 14.998 12.3573H9.43457C9.54595 12.189 9.60737 11.9907 9.60742 11.786C9.60742 11.5811 9.54642 11.3801 9.43262 11.2098C9.31885 11.0397 9.15686 10.9073 8.96777 10.8289C8.77852 10.7506 8.57005 10.7304 8.36914 10.7704C8.1683 10.8103 7.98367 10.9088 7.83887 11.0536C7.6941 11.1984 7.59561 11.383 7.55566 11.5838C7.51574 11.7847 7.53588 11.9933 7.61426 12.1825C7.63997 12.2445 7.67414 12.3019 7.71094 12.3573H2.14453C1.99277 12.3568 1.84659 12.2966 1.73926 12.1893C1.65874 12.1088 1.60522 12.0063 1.58301 11.8963L1.57129 11.784V10.6786H15.5713Z"
-                        fill="white"
-                        stroke="white"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_8_44">
-                        <rect width="17.1429" height="17.1429" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </button>
-                <button class="switch-btn" title="Mobile">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 18 18"
-                    fill="none"
-                  >
-                    <path
-                      d="M9.2855 13.5714C9.2855 13.9659 8.96572 14.2857 8.57122 14.2857C8.17672 14.2857 7.85693 13.9659 7.85693 13.5714C7.85693 13.1769 8.17672 12.8571 8.57122 12.8571C8.96572 12.8571 9.2855 13.1769 9.2855 13.5714Z"
-                      fill="#6B7280"
-                    />
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M6.5957 0.714295L6.63044 0.714302C6.63586 0.714295 6.64129 0.714295 6.64671 0.714302H10.4959C10.5013 0.714295 10.5067 0.714295 10.5121 0.714302L10.5469 0.714295C10.564 0.714295 10.5806 0.714293 10.5968 0.714302H10.7141C10.7259 0.714302 10.7375 0.71458 10.7491 0.715138C10.8106 0.71603 10.8654 0.717838 10.9171 0.721516C12.3351 0.822473 13.4631 1.95054 13.5641 3.36853C13.5714 3.47045 13.5713 3.58457 13.5713 3.73869V12.2943C13.5713 12.8789 13.5713 13.3615 13.5387 13.7544C13.5048 14.1624 13.432 14.5374 13.2496 14.8885C12.9786 15.4104 12.5531 15.8359 12.0312 16.1069C11.6801 16.2893 11.3051 16.3621 10.8971 16.396C10.5042 16.4286 10.0217 16.4286 9.43708 16.4286H7.70551C7.12091 16.4286 6.63837 16.4286 6.24553 16.396C5.83743 16.3621 5.46254 16.2893 5.11137 16.1069C4.58953 15.8359 4.16405 15.4104 3.89297 14.8885C3.71056 14.5374 3.6378 14.1624 3.60391 13.7544C3.57128 13.3615 3.57128 12.8789 3.5713 12.2943L3.57129 3.7387C3.57127 3.58458 3.57126 3.47045 3.57851 3.36853C3.67947 1.95054 4.80754 0.822473 6.22553 0.721516C6.27718 0.717838 6.33196 0.71603 6.39348 0.715138C6.40507 0.71458 6.41672 0.714302 6.42844 0.714302H6.54582C6.56198 0.714293 6.5786 0.714295 6.5957 0.714295ZM6.62237 2.14287C6.43 2.14287 6.37126 2.14332 6.32698 2.14648C5.61799 2.19696 5.05396 2.76099 5.00348 3.46999C5.00032 3.51427 4.99987 3.573 4.99987 3.76537V12.2643C4.99987 12.8864 5.00044 13.3094 5.02758 13.6362C5.054 13.9543 5.10186 14.1167 5.16071 14.23C5.29624 14.4909 5.50898 14.7037 5.76991 14.8392C5.88318 14.898 6.04559 14.9459 6.36376 14.9723C6.69048 14.9994 7.11343 15 7.73558 15H9.40701C10.0291 15 10.4521 14.9994 10.7789 14.9723C11.097 14.9459 11.2594 14.898 11.3727 14.8392C11.6336 14.7037 11.8464 14.4909 11.9819 14.23C12.0407 14.1167 12.0886 13.9543 12.115 13.6362C12.1421 13.3094 12.1427 12.8864 12.1427 12.2643V3.76537C12.1427 3.573 12.1423 3.51427 12.1391 3.46999C12.0886 2.76099 11.5246 2.19696 10.8156 2.14648C10.7714 2.14332 10.7126 2.14287 10.5202 2.14287C10.4724 2.14287 10.4671 2.14299 10.4635 2.14313C10.3717 2.14661 10.2848 2.18532 10.2209 2.25121C10.2183 2.25379 10.2146 2.25769 10.1827 2.29319L9.83365 2.68103L9.82472 2.69088C9.82051 2.69545 9.81229 2.70436 9.80179 2.71492C9.77943 2.73737 9.73929 2.77528 9.68222 2.81288C9.61379 2.85792 9.53851 2.89146 9.45929 2.91216C9.39315 2.92944 9.33808 2.93394 9.30651 2.93551C9.29158 2.93624 9.27943 2.93641 9.27329 2.93647L9.26001 2.93652H7.88265L7.86929 2.93647C7.86315 2.93641 7.85101 2.93624 7.83615 2.93551C7.80451 2.93394 7.74943 2.92944 7.68329 2.91216C7.60408 2.89146 7.52879 2.85792 7.46036 2.81288C7.40329 2.77528 7.36315 2.73737 7.34079 2.71492C7.33036 2.70436 7.32208 2.69545 7.31786 2.69088L7.30893 2.68103L6.9599 2.29319C6.92795 2.25769 6.92428 2.25379 6.92176 2.25121C6.85778 2.18532 6.77087 2.14661 6.67909 2.14313C6.67548 2.14299 6.67013 2.14287 6.62237 2.14287Z"
-                      fill="#6B7280"
-                    />
-                  </svg>
-                </button>
+                    </svg>
+                  </button>
+                </div>
               </div>
-            </div>
-            <div class="body">
-              <div class="preview-container">
-                <!-- <img  /> -->
-                <iframe src="https://map.yatmo.com/plugin.html?country=BE&language=EN&latitude=50.8346645&longitude=4.3135979&accentColor=%234B4416&licenseKey=YOUR_LICENSE_KEY&mapStyle=1&mode=overlay&marker=pin&zoom=20" loading="lazy" style="width:100%;height:520px" frameborder="0"></iframe>
+              <div class="body">
+                <div class="preview-container">
+                  <!-- <img  /> -->
+                  <iframe
+                    src="https://map.yatmo.com/plugin.html?country=BE&language=EN&latitude=50.8346645&longitude=4.3135979&accentColor=%234B4416&licenseKey=YOUR_LICENSE_KEY&mapStyle=1&mode=overlay&marker=pin&zoom=20"
+                    loading="lazy"
+                    style="width: 100%; height: 520px"
+                    frameborder="0"
+                  ></iframe>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const buttons = document.querySelectorAll(".switch-btn");
-        const title = document.getElementById("previewTitle");
+   <script>
+(function () {
+  "use strict";
 
-        buttons.forEach((btn) => {
-          btn.addEventListener("click", () => {
-            // Remove active from all buttons
-            buttons.forEach((b) => b.classList.remove("active"));
+  // Scope root
+  const pluginContainer = document.getElementById("yatmo-plugin-generator");
+  if (!pluginContainer) return;
 
-            // Add active to clicked button
-            btn.classList.add("active");
+  // Scoped query helpers
+  const queryOne = (selector) => pluginContainer.querySelector(selector);
+  const queryAll = (selector) => pluginContainer.querySelectorAll(selector);
 
-            // Update title text
-            if (btn.title === "Mobile") {
-              title.textContent = "LIVE PREVIEW (MOBILE)";
-            } else {
-              title.textContent = "LIVE PREVIEW (DESKTOP)";
-            }
-          });
-        });
+  document.addEventListener("DOMContentLoaded", function () {
+    /* ---------------------------------------------------
+       Preview switch (Desktop / Mobile)
+    --------------------------------------------------- */
+
+    const switchButtons = queryAll(".switch-btn");
+    const previewTitle = queryOne("#previewTitle");
+
+    switchButtons.forEach((button) => {
+      button.addEventListener("click", function () {
+        switchButtons.forEach((btn) => btn.classList.remove("active"));
+        this.classList.add("active");
+
+        if (this.title === "Mobile") {
+          previewTitle.textContent = "LIVE PREVIEW (MOBILE)";
+        } else {
+          previewTitle.textContent = "LIVE PREVIEW (DESKTOP)";
+        }
+      });
+    });
+
+    /* ---------------------------------------------------
+       Custom tabs
+    --------------------------------------------------- */
+
+    const tabButtons = queryAll(".custom-tab-btn");
+    const tabPanes = queryAll(".custom-tab-pane");
+
+    tabButtons.forEach((button) => {
+      button.addEventListener("click", function () {
+        const targetTab = this.getAttribute("data-tab");
+
+        tabButtons.forEach((btn) => btn.classList.remove("active"));
+        tabPanes.forEach((pane) => pane.classList.remove("active"));
+
+        this.classList.add("active");
+
+        const activePane = queryOne(`#${targetTab}-tab-content`);
+        if (activePane) {
+          activePane.classList.add("active");
+        }
+      });
+    });
+
+    /* ---------------------------------------------------
+       Accent color sync
+    --------------------------------------------------- */
+
+    const colorPickerInput = queryOne("#colorPicker");
+    const colorTextInput = queryOne("#customColor");
+
+    if (colorPickerInput && colorTextInput) {
+      colorPickerInput.addEventListener("input", function (event) {
+        colorTextInput.value = event.target.value;
+        if (typeof updateEmbedCode === "function") {
+          updateEmbedCode();
+        }
       });
 
-      // Custom tabs functionality
-      document.querySelectorAll(".custom-tab-btn").forEach((btn) => {
-  btn.addEventListener("click", function () {
-    const targetTab = this.getAttribute("data-tab");
-
-    // Remove active classes from all buttons and panes
-    document.querySelectorAll(".custom-tab-btn").forEach((b) => b.classList.remove("active"));
-    document.querySelectorAll(".custom-tab-pane").forEach((p) => p.classList.remove("active"));
-
-    // Add active class to clicked button and pane
-    this.classList.add("active");
-    document.getElementById(targetTab + "-tab-content").classList.add("active");
-  });
-});
-
-      // Update accent color text when color picker changes
-      document
-        .getElementById("accentColor")
-        .addEventListener("input", function (e) {
-          document.getElementById("accentColorText").value = e.target.value;
-          updateEmbedCode();
-        });
-
-      // Update color picker when text input changes
-      document
-        .getElementById("accentColorText")
-        .addEventListener("input", function (e) {
-          const color = e.target.value;
-          if (/^#[0-9A-F]{6}$/i.test(color)) {
-            document.getElementById("accentColor").value = color;
+      colorTextInput.addEventListener("input", function (event) {
+        const colorValue = event.target.value;
+        if (/^#[0-9A-F]{6}$/i.test(colorValue)) {
+          colorPickerInput.value = colorValue;
+          if (typeof updateEmbedCode === "function") {
             updateEmbedCode();
           }
-        });
-
-      // Show/hide circle radius based on marker type
-      document.querySelectorAll('input[name="markerType"]').forEach((radio) => {
-        radio.addEventListener("change", function () {
-          const circleRadiusGroup =
-            document.getElementById("circleRadiusGroup");
-          const customMarkerGroup =
-            document.getElementById("customMarkerGroup");
-          const circleCollapse = document.getElementById(
-            "collapseCircleRadius"
-          );
-          const customCollapse = document.getElementById(
-            "collapseCustomMarker"
-          );
-
-          // Collapse any open accordions before showing/hiding
-          if (circleCollapse && circleCollapse.classList.contains("show")) {
-            const bsCollapse = bootstrap.Collapse.getInstance(circleCollapse);
-            if (bsCollapse) bsCollapse.hide();
-          }
-          if (customCollapse && customCollapse.classList.contains("show")) {
-            const bsCollapse = bootstrap.Collapse.getInstance(customCollapse);
-            if (bsCollapse) bsCollapse.hide();
-          }
-
-          if (this.value === "circle") {
-            circleRadiusGroup.style.display = "block";
-            customMarkerGroup.style.display = "none";
-          } else if (this.value === "custom") {
-            circleRadiusGroup.style.display = "none";
-            customMarkerGroup.style.display = "block";
-          } else {
-            circleRadiusGroup.style.display = "none";
-            customMarkerGroup.style.display = "none";
-          }
-          updateEmbedCode();
-        });
+        }
       });
+    }
 
-      // Update radius value display
-      document
-        .getElementById("circleRadius")
-        .addEventListener("input", function (e) {
-          document.getElementById("radiusValue").textContent =
-            e.target.value + " m";
-          updateEmbedCode();
-        });
+    /* ---------------------------------------------------
+       Marker type (Pin / Circle / Custom)
+    --------------------------------------------------- */
 
-      // Update zoom value display
-      document.getElementById("zoom").addEventListener("input", function (e) {
-        document.getElementById("zoomValue").textContent = e.target.value;
-        updateEmbedCode();
-      });
+    const markerTypeInputs = queryAll('input[name="markerType"]');
+    const circleRadiusGroup = queryOne("#circleRadiusGroup");
+    const customMarkerGroup = queryOne("#customMarkerGroup");
+    const circleCollapse = queryOne("#collapseCircleRadius");
+    const customCollapse = queryOne("#collapseCustomMarker");
 
-      // Update embed code when any form field changes
-      document
-        .getElementById("pluginForm")
-        .addEventListener("input", updateEmbedCode);
-      document
-        .getElementById("pluginForm")
-        .addEventListener("change", updateEmbedCode);
-
-      // Generate embed code
-      function updateEmbedCode() {
-        const form = document.getElementById("pluginForm");
-        const formData = new FormData(form);
-
-        const config = {
-          style: formData.get("mapStyle") || "1",
-          mode: formData.get("mode") || "together",
-          country: formData.get("country") || "BE",
-          language: formData.get("language") || "en",
-          latitude: formData.get("latitude") || "50.8503",
-          longitude: formData.get("longitude") || "4.3517",
-          markerType: formData.get("markerType") || "pin",
-          circleRadius: formData.get("circleRadius") || "500",
-          customMarkerUrl: formData.get("customMarkerUrl") || "",
-          width: formData.get("width") || "100",
-          height: formData.get("height") || "520",
-          zoom: formData.get("zoom") || "15",
-          accentColor:
-            document.getElementById("accentColor").value || "#428BFF",
-          licenseKey: formData.get("licenseKey") || "",
-        };
-
-        // Build URL parameters
-        const params = new URLSearchParams();
-        params.append("style", config.style);
-        params.append("mode", config.mode);
-        params.append("country", config.country);
-        params.append("lang", config.language);
-        params.append("lat", config.latitude.replace(",", "."));
-        params.append("lng", config.longitude.replace(",", "."));
-        params.append("zoom", config.zoom);
-        params.append("accent", config.accentColor);
-        params.append("width", config.width + "%");
-        params.append("height", config.height + "px");
-
-        if (config.markerType === "circle") {
-          params.append("radius", config.circleRadius);
-        } else if (config.markerType === "custom" && config.customMarkerUrl) {
-          params.append("marker", config.customMarkerUrl);
+    markerTypeInputs.forEach((radio) => {
+      radio.addEventListener("change", function () {
+        // Close open accordions
+        if (circleCollapse?.classList.contains("show")) {
+          bootstrap.Collapse.getInstance(circleCollapse)?.hide();
+        }
+        if (customCollapse?.classList.contains("show")) {
+          bootstrap.Collapse.getInstance(customCollapse)?.hide();
         }
 
-        if (config.licenseKey) {
-          params.append("key", config.licenseKey);
+        if (this.value === "circle") {
+          circleRadiusGroup.style.display = "block";
+          customMarkerGroup.style.display = "none";
+        } else if (this.value === "custom") {
+          circleRadiusGroup.style.display = "none";
+          customMarkerGroup.style.display = "block";
+        } else {
+          circleRadiusGroup.style.display = "none";
+          customMarkerGroup.style.display = "none";
         }
 
-        const embedUrl = `https://map.yatmo.com/embed?${params.toString()}`;
+        if (typeof updateEmbedCode === "function") {
+          updateEmbedCode();
+        }
+      });
+    });
 
-        const embedCode = `<iframe 
-  src="${embedUrl}"
-  width="${config.width}%"
-  height="${config.height}"
-  frameborder="0"
-  style="border:0;"
-  allowfullscreen
-  loading="lazy">
-</iframe>`;
+    /* ---------------------------------------------------
+       Circle radius
+    --------------------------------------------------- */
 
-        document.getElementById("code").value = embedCode;
+    const circleRadiusInput = queryOne("#circleRadius");
+    const radiusValueLabel = queryOne("#radiusValue");
 
-        // Update previews
-        document.getElementById("previewMedium").src = embedUrl;
-        document.getElementById("previewMobile").src = embedUrl;
-      }
+    if (circleRadiusInput && radiusValueLabel) {
+      circleRadiusInput.addEventListener("input", function (event) {
+        radiusValueLabel.textContent = event.target.value + " m";
+        if (typeof updateEmbedCode === "function") {
+          updateEmbedCode();
+        }
+      });
+    }
 
-      // Copy to clipboard
-      document
-        .getElementById("copyButton")
-        .addEventListener("click", function () {
-          const code = document.getElementById("code").value;
-          navigator.clipboard.writeText(code).then(() => {
-            const btn = this;
-            const originalText = btn.innerHTML;
-            btn.innerHTML = '<i class="bi bi-check"></i> Copied!';
-            btn.classList.add("btn-success");
-            btn.classList.remove("btn-copy");
-            setTimeout(() => {
-              btn.innerHTML = originalText;
-              btn.classList.remove("btn-success");
-              btn.classList.add("btn-copy");
-            }, 2000);
-          });
-        });
+    /* ---------------------------------------------------
+       Zoom
+    --------------------------------------------------- */
 
-      // Initialize on page load
-      updateEmbedCode();
-    </script>
+    const zoomInput = queryOne("#markerSize");
+
+    if (zoomInput) {
+      zoomInput.addEventListener("input", function () {
+        if (typeof updateEmbedCode === "function") {
+          updateEmbedCode();
+        }
+      });
+    }
+
+    /* ---------------------------------------------------
+       Form changes
+    --------------------------------------------------- */
+
+    const pluginForm = queryOne("#pluginForm");
+
+    if (pluginForm) {
+      pluginForm.addEventListener("input", () => {
+        if (typeof updateEmbedCode === "function") {
+          updateEmbedCode();
+        }
+      });
+
+      pluginForm.addEventListener("change", () => {
+        if (typeof updateEmbedCode === "function") {
+          updateEmbedCode();
+        }
+      });
+    }
+  });
+})();
+</script>
+
   </body>
 </html>
